@@ -57,39 +57,84 @@ Select the **iPhone Duo** run destination and press <kbd>⌘</kbd><kbd>R</kbd>. 
 
 ### Hinge
 
-| | Example | What it shows |
-|---|---|---|
-| <img src=".github/images/hingeAngle.png" width="260"> | [**Hinge Angle**](iPhoneDuoByExamples/Examples/HingeAngleExample.swift) | Reads the live angle with `onHingeChange` and mirrors it in a 3D model of the device, a gauge, and a status strip. |
-| <img src=".github/images/hingeHistory.png" width="260"> | [**Angle History**](iPhoneDuoByExamples/Examples/HingeHistoryExample.swift) | Records every hinge update and plots it with Swift Charts. Uses `isEnabled` to pause delivery. |
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/HingeAngleExample.swift"><img width="380" src=".github/images/hingeAngle.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/HingeAngleExample.swift"><b>Hinge Angle</b></a><br>Reads the live angle with <code>onHingeChange</code> and mirrors it in a 3D model of the device, a gauge, and a status strip.</p>
+</td>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/HingeHistoryExample.swift"><img width="380" src=".github/images/hingeHistory.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/HingeHistoryExample.swift"><b>Angle History</b></a><br>Records every hinge update and plots it with Swift Charts. Uses <code>isEnabled</code> to pause delivery.</p>
+</td>
+</tr>
+</table>
 
 ### Reserved Regions
 
-| | Example | What it shows |
-|---|---|---|
-| <img src=".github/images/reservedRegions.png" width="260" alt="The fold shown as an active division region while the device is partially folded"> | [**Reserved Regions**](iPhoneDuoByExamples/Examples/ReservedRegionsExample.swift) | Queries `.division` and `.occlusion` regions from `GeometryProxy` and draws each region's frame, margins, and active state. |
-| <img src=".github/images/avoidDivision.png" width="260"> | [**Avoid the Crease**](iPhoneDuoByExamples/Examples/AvoidDivisionExample.swift) | A two-page reader that places one page on each side of the division region. When there's no division, it falls back to one page. |
-| <img src=".github/images/tabletop.png" width="260"> | [**Tabletop & Book**](iPhoneDuoByExamples/Examples/TabletopExample.swift) | Lays out a media player around the *active* division region: artwork above and controls below in tabletop pose, side by side in book pose. Apple recommends reserved regions, not the hinge angle, for layout. |
-| <img src=".github/images/evenColumns.png" width="260"> | [**Even Columns**](iPhoneDuoByExamples/Examples/EvenColumnsExample.swift) | Uses the *inactive* division region to give a grid an even number of columns, with a gutter right over the fold. |
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/ReservedRegionsExample.swift"><img width="380" src=".github/images/reservedRegions.png" alt="The fold shown as an active division region while the device is partially folded"></a>
+<p><a href="iPhoneDuoByExamples/Examples/ReservedRegionsExample.swift"><b>Reserved Regions</b></a><br>Queries <code>.division</code> and <code>.occlusion</code> regions from <code>GeometryProxy</code> and draws each region's frame, margins, and active state.</p>
+</td>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/AvoidDivisionExample.swift"><img width="380" src=".github/images/avoidDivision.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/AvoidDivisionExample.swift"><b>Avoid the Crease</b></a><br>A two-page reader that places one page on each side of the division region. When there's no division, it falls back to one page.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/TabletopExample.swift"><img width="380" src=".github/images/tabletop.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/TabletopExample.swift"><b>Tabletop &amp; Book</b></a><br>Lays out a media player around the <i>active</i> division region: artwork above and controls below in tabletop pose, side by side in book pose. Apple recommends reserved regions, not the hinge angle, for layout.</p>
+</td>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/EvenColumnsExample.swift"><img width="380" src=".github/images/evenColumns.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/EvenColumnsExample.swift"><b>Even Columns</b></a><br>Uses the <i>inactive</i> division region to give a grid an even number of columns, with a gutter right over the fold.</p>
+</td>
+</tr>
+</table>
 
 ### Arrangements
 
-| | Example | What it shows |
-|---|---|---|
-| <img src=".github/images/splitArrangement.png" width="260"><br><img src=".github/images/splitArrangement-folded.png" width="130"> | [**Split Arrangement**](iPhoneDuoByExamples/Examples/SplitArrangementExample.swift) | `ArrangementView` with the `.split` style. Sets the allowed axes and the pane ratio with `splitArrangementLayoutRatio`. When unfolded, the panes sit side by side; when folded, they stack. |
-| <img src=".github/images/overlayArrangement-book.png" width="260"> | [**Overlay Arrangement**](iPhoneDuoByExamples/Examples/OverlayArrangementExample.swift) | `ArrangementView` with the `.overlay` style: a results panel over a map. The panel collapses while `overlayArrangementZIndex` says it covers the map, and expands when the partially folded device puts the two side by side. `overlayArrangementEdge` sets which side the panel takes. |
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/SplitArrangementExample.swift"><img width="254" src=".github/images/splitArrangement.png"> <img width="122" src=".github/images/splitArrangement-folded.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/SplitArrangementExample.swift"><b>Split Arrangement</b></a><br><code>ArrangementView</code> with the <code>.split</code> style. Sets the allowed axes and the pane ratio with <code>splitArrangementLayoutRatio</code>. When unfolded, the panes sit side by side; when folded, they stack.</p>
+</td>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/OverlayArrangementExample.swift"><img width="380" src=".github/images/overlayArrangement-book.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/OverlayArrangementExample.swift"><b>Overlay Arrangement</b></a><br><code>ArrangementView</code> with the <code>.overlay</code> style: a results panel over a map. The panel collapses while <code>overlayArrangementZIndex</code> says it covers the map, and expands when the partially folded device puts the two side by side. <code>overlayArrangementEdge</code> sets which side the panel takes.</p>
+</td>
+</tr>
+</table>
 
 ### Bars & Margins
 
-| | Example | What it shows |
-|---|---|---|
-| <img src=".github/images/verticalToolbar.png" width="260"> | [**Vertical Toolbar**](iPhoneDuoByExamples/Examples/VerticalToolbarExample.swift) | A mail-style demo with a tab bar and toolbar items in the vertical bar. Covers `toolbarVerticalBehavior`, `toolbarVerticalCompressionBehavior`, `axisBehavior`, `visibilityPriority`, `.topBarPinnedTrailing`, `ToolbarOverflowMenu`, badges, and `toolbarVerticalEdge`. |
-| <img src=".github/images/containerMargins.png" width="260"> | [**Container Margins**](iPhoneDuoByExamples/Examples/ContainerMarginsExample.swift) | `contentMargins(for: .container)` compared with a hard-coded padding, and the raw values from `GeometryProxy.contentMargins(for:)`. |
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/VerticalToolbarExample.swift"><img width="380" src=".github/images/verticalToolbar.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/VerticalToolbarExample.swift"><b>Vertical Toolbar</b></a><br>A mail-style demo with a tab bar and toolbar items in the vertical bar. Covers <code>toolbarVerticalBehavior</code>, <code>toolbarVerticalCompressionBehavior</code>, <code>axisBehavior</code>, <code>visibilityPriority</code>, <code>.topBarPinnedTrailing</code>, <code>ToolbarOverflowMenu</code>, badges, and <code>toolbarVerticalEdge</code>.</p>
+</td>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/ContainerMarginsExample.swift"><img width="380" src=".github/images/containerMargins.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/ContainerMarginsExample.swift"><b>Container Margins</b></a><br><code>contentMargins(for: .container)</code> compared with a hard-coded padding, and the raw values from <code>GeometryProxy.contentMargins(for:)</code>.</p>
+</td>
+</tr>
+</table>
 
 ### Adaptivity
 
-| | Example | What it shows |
-|---|---|---|
-| <img src=".github/images/foldedUnfolded.png" width="260"><br><img src=".github/images/foldedUnfolded-folded.png" width="130"> | [**Folded & Unfolded**](iPhoneDuoByExamples/Examples/FoldedUnfoldedExample.swift) | Adapts a layout to the space the app has, using size classes and `onGeometryChange`, rather than checking which device it runs on. |
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="iPhoneDuoByExamples/Examples/FoldedUnfoldedExample.swift"><img width="254" src=".github/images/foldedUnfolded.png"> <img width="122" src=".github/images/foldedUnfolded-folded.png"></a>
+<p><a href="iPhoneDuoByExamples/Examples/FoldedUnfoldedExample.swift"><b>Folded &amp; Unfolded</b></a><br>Adapts a layout to the space the app has, using size classes and <code>onGeometryChange</code>, rather than checking which device it runs on.</p>
+</td>
+</tr>
+</table>
 
 ## API Cheat Sheet
 
