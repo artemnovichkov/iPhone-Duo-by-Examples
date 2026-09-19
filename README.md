@@ -283,6 +283,7 @@ The Xcode project uses Xcode's JSON project format ([`project.xcproj`](iPhoneDuo
 - [Accorduon](https://github.com/artemnovichkov/Accorduon): an accordion for iPhone Duo where the hinge is the bellows. Fold and unfold to play. A full app built on `onHingeChange`.
 - [Duogami](https://github.com/artemnovichkov/Duogami): an origami workshop for iPhone Duo. Fold the phone to fold the paper. A full app built on `onHingeChange` and `reservedRegions`.
 - [SandValley](https://github.com/artemnovichkov/SandValley): sand for iPhone Duo. Fold the device and the sand slides into the fold. A full app built on `onHingeChange`, `reservedRegions`, and a Metal shader.
+- [ClawKit](https://github.com/artemnovichkov/ClawKit): a clay claw machine for iPhone Duo. The machine sits above the fold and the controls below it. A full app built on `reservedRegions`, `onHingeChange`, and RealityKit.
 
 ## Resources
 
