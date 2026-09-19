@@ -3,20 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0AF625A35FD6D9242FAAFBB0 /* FoldedUnfoldedExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ADA840D9CCB41B5D13B167 /* FoldedUnfoldedExample.swift */; };
+		198B9A96842BEC8D59EDB663 /* TabletopExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA664EB746EDC44EC96235A5 /* TabletopExample.swift */; };
 		1ACDC00855F96E0D312CF06B /* ReservedRegionsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C931E346A251CD11EEA39 /* ReservedRegionsExample.swift */; };
 		1F85B27DD58872AE6710DD4C /* VerticalToolbarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1A52AAE1ABD84F0F219F8 /* VerticalToolbarExample.swift */; };
 		227559D114877B1106B74798 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9453EDB6BC48549C1861D2 /* CatalogView.swift */; };
 		315E094E6449BB7F2FBC8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF6745FE765C3EA077C00D2 /* Assets.xcassets */; };
 		4780C0E2CBF103CF886F34BF /* HingeAngleExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1DC23B55A4DAE952B1239 /* HingeAngleExample.swift */; };
-		63535DBCF84D1C18E17CBF33 /* HingeStatusExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6575443F2ECDB3252A17DDE8 /* HingeStatusExample.swift */; };
 		6A564A5CAD6125F3D4D6FB06 /* OverlayArrangementExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE14E817041C2240545DFF72 /* OverlayArrangementExample.swift */; };
 		6ABCD4502A4F65092314EDAB /* NoHingeNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3561EFCBA898A14E53C9AC6B /* NoHingeNote.swift */; };
 		7235A3C5AA7D52248FD0E575 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0BDBE7FF686657AF2DC31C /* Example.swift */; };
+		826557C3452257BEE3040BD0 /* EvenColumnsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F09D4AE758514C28D69FCD /* EvenColumnsExample.swift */; };
 		9D114C77D81B0EA3A905B375 /* ExampleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0F1B71748519BFBE129EF /* ExampleIcon.swift */; };
 		9D3B0EAEC17E7FAAAF30BFBA /* ContainerMarginsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03791A7BEF42EB7D02585E98 /* ContainerMarginsExample.swift */; };
 		9E57DF982377C532F7D2DCAD /* HingeHistoryExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F976D2634E6BA630E15AD75 /* HingeHistoryExample.swift */; };
@@ -36,9 +37,8 @@
 		2F976D2634E6BA630E15AD75 /* HingeHistoryExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HingeHistoryExample.swift; sourceTree = "<group>"; };
 		3561EFCBA898A14E53C9AC6B /* NoHingeNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoHingeNote.swift; sourceTree = "<group>"; };
 		4BC1DC23B55A4DAE952B1239 /* HingeAngleExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HingeAngleExample.swift; sourceTree = "<group>"; };
-		56F8AE6F414878B7278DD2C5 /* DuoByExamples.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DuoByExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F8AE6F414878B7278DD2C5 /* DuoByExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoByExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		617C931E346A251CD11EEA39 /* ReservedRegionsExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedRegionsExample.swift; sourceTree = "<group>"; };
-		6575443F2ECDB3252A17DDE8 /* HingeStatusExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HingeStatusExample.swift; sourceTree = "<group>"; };
 		74B88F6B906C2BC000962D06 /* SplitArrangementExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitArrangementExample.swift; sourceTree = "<group>"; };
 		7CC6C9CC224FEF3B7855ED79 /* DuoByExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoByExamplesApp.swift; sourceTree = "<group>"; };
 		7DF6745FE765C3EA077C00D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +46,8 @@
 		90E1A52AAE1ABD84F0F219F8 /* VerticalToolbarExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalToolbarExample.swift; sourceTree = "<group>"; };
 		A8A0F1B71748519BFBE129EF /* ExampleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleIcon.swift; sourceTree = "<group>"; };
 		AF0BDBE7FF686657AF2DC31C /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		BA664EB746EDC44EC96235A5 /* TabletopExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletopExample.swift; sourceTree = "<group>"; };
+		F0F09D4AE758514C28D69FCD /* EvenColumnsExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenColumnsExample.swift; sourceTree = "<group>"; };
 		FE14E817041C2240545DFF72 /* OverlayArrangementExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayArrangementExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,13 +73,14 @@
 			children = (
 				0BDBA28F89F295FBA424BCAC /* AvoidDivisionExample.swift */,
 				03791A7BEF42EB7D02585E98 /* ContainerMarginsExample.swift */,
+				F0F09D4AE758514C28D69FCD /* EvenColumnsExample.swift */,
 				82ADA840D9CCB41B5D13B167 /* FoldedUnfoldedExample.swift */,
 				4BC1DC23B55A4DAE952B1239 /* HingeAngleExample.swift */,
 				2F976D2634E6BA630E15AD75 /* HingeHistoryExample.swift */,
-				6575443F2ECDB3252A17DDE8 /* HingeStatusExample.swift */,
 				FE14E817041C2240545DFF72 /* OverlayArrangementExample.swift */,
 				617C931E346A251CD11EEA39 /* ReservedRegionsExample.swift */,
 				74B88F6B906C2BC000962D06 /* SplitArrangementExample.swift */,
+				BA664EB746EDC44EC96235A5 /* TabletopExample.swift */,
 				90E1A52AAE1ABD84F0F219F8 /* VerticalToolbarExample.swift */,
 			);
 			path = Examples;
@@ -159,7 +162,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					3F360074F3FA4604DDE0A61D = {
 						ProvisioningStyle = Automatic;
@@ -176,7 +179,6 @@
 			);
 			mainGroup = E65C4EFA925953EA941788E9;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -206,17 +208,18 @@
 				9D3B0EAEC17E7FAAAF30BFBA /* ContainerMarginsExample.swift in Sources */,
 				D410034310E73DE2CE04C5C0 /* DeviceHinge+Display.swift in Sources */,
 				D5DF2DD0AB7C3AC114C6A098 /* DuoByExamplesApp.swift in Sources */,
+				826557C3452257BEE3040BD0 /* EvenColumnsExample.swift in Sources */,
 				7235A3C5AA7D52248FD0E575 /* Example.swift in Sources */,
 				9D114C77D81B0EA3A905B375 /* ExampleIcon.swift in Sources */,
 				B79D5275731C92F916ED1660 /* ExampleScreen.swift in Sources */,
 				0AF625A35FD6D9242FAAFBB0 /* FoldedUnfoldedExample.swift in Sources */,
 				4780C0E2CBF103CF886F34BF /* HingeAngleExample.swift in Sources */,
 				9E57DF982377C532F7D2DCAD /* HingeHistoryExample.swift in Sources */,
-				63535DBCF84D1C18E17CBF33 /* HingeStatusExample.swift in Sources */,
 				6ABCD4502A4F65092314EDAB /* NoHingeNote.swift in Sources */,
 				6A564A5CAD6125F3D4D6FB06 /* OverlayArrangementExample.swift in Sources */,
 				1ACDC00855F96E0D312CF06B /* ReservedRegionsExample.swift in Sources */,
 				CA09988A7ED5313357563097 /* SplitArrangementExample.swift in Sources */,
+				198B9A96842BEC8D59EDB663 /* TabletopExample.swift in Sources */,
 				1F85B27DD58872AE6710DD4C /* VerticalToolbarExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +265,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -276,6 +280,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -368,6 +373,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -389,6 +395,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;

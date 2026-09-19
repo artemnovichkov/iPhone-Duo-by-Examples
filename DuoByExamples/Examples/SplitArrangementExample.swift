@@ -65,9 +65,24 @@ private struct PaneView: View {
     @Environment(\.splitArrangementAxis) private var splitAxis
 
     var body: some View {
+        // Folded, the panes get short; drop the icon when it doesn't fit.
+        ViewThatFits(in: .vertical) {
+            content(showsIcon: true)
+            content(showsIcon: false)
+        }
+        .foregroundStyle(.white)
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(color.gradient, in: .rect(cornerRadius: 28))
+        .padding(6)
+    }
+
+    private func content(showsIcon: Bool) -> some View {
         VStack(spacing: 16) {
-            Image(systemName: symbol)
-                .font(.system(size: 44, weight: .semibold))
+            if showsIcon {
+                Image(systemName: symbol)
+                    .font(.system(size: 44, weight: .semibold))
+            }
             Text(title)
                 .font(.title2.bold())
             Text(axisDescription)
@@ -86,11 +101,6 @@ private struct PaneView: View {
                 .frame(maxWidth: 240)
             }
         }
-        .foregroundStyle(.white)
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(color.gradient, in: .rect(cornerRadius: 28))
-        .padding(6)
     }
 
     private var axisDescription: String {

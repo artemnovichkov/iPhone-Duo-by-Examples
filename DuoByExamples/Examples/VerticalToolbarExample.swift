@@ -10,6 +10,11 @@ import SwiftUI
 ///   and toolbar items share the vertical bar and space runs out.
 /// - `axisBehavior(_:)` on toolbar content chooses whether an item may move into the vertical bar.
 /// - `toolbarVerticalEdge` in the environment tells you which edge the bar is on, or `nil`.
+/// - `visibilityPriority(_:)`, `.topBarPinnedTrailing` and `ToolbarOverflowMenu` decide which
+///   items stay visible when the vertical bar runs out of room.
+///
+/// Give every item both a title and a symbol, so the system can pick the right
+/// representation for horizontal and vertical bars.
 ///
 /// The demo is presented full screen, because the vertical bar configuration flows up
 /// to the window or the nearest presentation.
@@ -34,7 +39,7 @@ struct VerticalToolbarExample: View {
             } header: {
                 Text("Configuration")
             } footer: {
-                Text("Unfold the device and launch the demo to see the vertical bar in action.")
+                Text("The vertical bar appears on the outer display and on the inner display in landscape. Launch the demo to see it with a tab bar and toolbar items.")
             }
 
             Section {
@@ -152,13 +157,30 @@ private struct DemoScreen: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close", systemImage: "xmark") { dismiss() }
                 }
-                ToolbarItemGroup(placement: .primaryAction) {
+                // 👇 The API: a prominent action that stays pinned instead of overflowing.
+                ToolbarItem(placement: .topBarPinnedTrailing) {
                     Button("Compose", systemImage: "square.and.pencil") {}
-                    Button("Search", systemImage: "magnifyingglass") {}
-                    Button("Filter", systemImage: "line.3.horizontal.decrease") {}
                 }
-                // 👇 The API: whether these items may move into the vertical bar.
+
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Search", systemImage: "magnifyingglass") {}
+                }
+                // 👇 The API: keep this item visible longer when space runs out.
+                .visibilityPriority(.high)
+                // 👇 The API: whether the item may move into the vertical bar.
                 .axisBehavior(configuration.itemAxis.value)
+
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Unread", systemImage: "envelope.badge") {}
+                        .badge(7)
+                }
+                .axisBehavior(configuration.itemAxis.value)
+
+                // 👇 The API: secondary actions go straight into the overflow menu.
+                ToolbarOverflowMenu {
+                    Button("Mark All as Read", systemImage: "envelope.open") {}
+                    Button("Select Messages", systemImage: "checkmark.circle") {}
+                }
 
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button("Flag", systemImage: "flag") {}
