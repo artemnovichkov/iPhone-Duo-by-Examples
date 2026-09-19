@@ -33,6 +33,7 @@ iOS 27.1 adds a set of SwiftUI APIs for the iPhone Duo: reading the hinge, findi
 - [API Cheat Sheet](#api-cheat-sheet)
 - [Good to Know](#good-to-know)
 - [Project Structure](#project-structure)
+- [See Also](#see-also)
 - [Resources](#resources)
 - [Contributing](#contributing)
 - [Author](#author)
@@ -276,6 +277,10 @@ iPhoneDuoByExamples
 ```
 
 The Xcode project uses Xcode's JSON project format ([`project.xcproj`](iPhoneDuoByExamples.xcodeproj/project.xcproj)). It's readable and easy to edit by hand; each source file is listed there with its target membership.
+
+## See Also
+
+- [Accorduon](https://github.com/artemnovichkov/Accorduon): an accordion for iPhone Duo where the hinge is the bellows. Fold and unfold to play. A full app built on `onHingeChange`.
 
 ## Resources
 
