@@ -217,7 +217,7 @@ DuoByExamples
 └── Resources     # Asset catalog
 ```
 
-The Xcode project is generated with [XcodeGen](https://github.com/yonaskolb/XcodeGen) from [`project.yml`](project.yml). The generated `.xcodeproj` is committed, so you don't need XcodeGen to build. After you add or rename files, run `xcodegen generate` to update the project.
+The Xcode project uses Xcode's JSON project format ([`project.xcproj`](DuoByExamples.xcodeproj/project.xcproj)). It's readable and easy to edit by hand; each source file is listed there with its target membership.
 
 ## Contributing
 
