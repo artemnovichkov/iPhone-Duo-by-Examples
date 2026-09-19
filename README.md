@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="iPhoneDuoByExamples/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="128" alt="iPhone Duo by Examples icon">
+  <img src=".github/images/icon.png" width="128" alt="iPhone Duo by Examples icon">
 </p>
 
 <h1 align="center">iPhone Duo by Examples</h1>
