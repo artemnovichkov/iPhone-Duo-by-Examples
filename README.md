@@ -281,6 +281,7 @@ The Xcode project uses Xcode's JSON project format ([`project.xcproj`](iPhoneDuo
 ## See Also
 
 - [Accorduon](https://github.com/artemnovichkov/Accorduon): an accordion for iPhone Duo where the hinge is the bellows. Fold and unfold to play. A full app built on `onHingeChange`.
+- [Duogami](https://github.com/artemnovichkov/Duogami): an origami workshop for iPhone Duo. Fold the phone to fold the paper. A full app built on `onHingeChange` and `reservedRegions`.
 
 ## Resources
 
