@@ -62,7 +62,7 @@ private struct ExampleInfoSheet: View {
 }
 
 enum Repository {
-    static let url = URL(string: "https://github.com/artemnovichkov/DuoByExamples")!
+    static let url = URL(string: "https://github.com/artemnovichkov/iPhone-Duo-by-Examples")!
 
     static func sourceURL(for example: Example) -> URL {
         url.appending(path: "blob/main").appending(path: example.sourcePath)

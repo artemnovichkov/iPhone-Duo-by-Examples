@@ -13,51 +13,51 @@
   "files": [
     {
       "kind": "group",
-      "path": "DuoByExamples",
+      "path": "iPhoneDuoByExamples",
       "children": [
         {
           "kind": "group",
           "path": "App",
           "children": [
-            { "path": "DuoByExamplesApp.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
+            { "path": "iPhoneDuoByExamplesApp.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
           ],
         }, {
           "kind": "group",
           "path": "Catalog",
           "children": [
-            { "path": "CatalogView.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "Example.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "ExampleScreen.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
+            { "path": "CatalogView.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "Example.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "ExampleScreen.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
           ],
         }, {
           "kind": "group",
           "path": "Components",
           "children": [
-            { "path": "DeviceHinge+Display.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "ExampleIcon.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "NoHingeNote.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
+            { "path": "DeviceHinge+Display.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "ExampleIcon.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "NoHingeNote.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
           ],
         }, {
           "kind": "group",
           "path": "Examples",
           "children": [
-            { "path": "AvoidDivisionExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "ContainerMarginsExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "EvenColumnsExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "FoldedUnfoldedExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "HingeAngleExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "HingeHistoryExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "OverlayArrangementExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "ReservedRegionsExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "SplitArrangementExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "TabletopExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
-            { "path": "VerticalToolbarExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
+            { "path": "AvoidDivisionExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "ContainerMarginsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "EvenColumnsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "FoldedUnfoldedExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "HingeAngleExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "HingeHistoryExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "OverlayArrangementExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "ReservedRegionsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "SplitArrangementExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "TabletopExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "VerticalToolbarExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
           ],
         }, {
           "kind": "group",
           "path": "Resources",
           "children": [
-            { "path": "Assets.xcassets", "target-membership": [ "DuoByExamples/resources" ] },
+            { "path": "Assets.xcassets", "target-membership": [ "iPhoneDuoByExamples/resources" ] },
           ],
         },
       ],
@@ -65,15 +65,15 @@
       "kind": "group",
       "name": "Products",
       "children": [
-        { "path": "<PRODUCTS>/DuoByExamples.app", "id": "56F8AE6F414878B7278DD2C5", "type": "wrapper.application", "index": false },
+        { "path": "<PRODUCTS>/iPhoneDuoByExamples.app", "id": "56F8AE6F414878B7278DD2C5", "type": "wrapper.application", "index": false },
       ],
     },
   ],
   "targets": [
     {
-      "name": "DuoByExamples",
+      "name": "iPhoneDuoByExamples",
       "id": "3F360074F3FA4604DDE0A61D",
-      "product": "Products/DuoByExamples.app",
+      "product": "Products/iPhoneDuoByExamples.app",
       "product-type": "application",
       "legacy-provisioning-style": "automatic",
       "build-phases": [
@@ -95,7 +95,7 @@
           "$(inherited)",
           "@executable_path/Frameworks",
         ],
-        "PRODUCT_BUNDLE_IDENTIFIER": "com.artemnovichkov.DuoByExamples",
+        "PRODUCT_BUNDLE_IDENTIFIER": "com.artemnovichkov.iPhoneDuoByExamples",
         "SDKROOT": "iphoneos",
         "TARGETED_DEVICE_FAMILY": "1,2",
       },

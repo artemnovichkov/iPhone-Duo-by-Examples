@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="DuoByExamples/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="128" alt="Duo by Examples icon">
+  <img src="iPhoneDuoByExamples/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="128" alt="iPhone Duo by Examples icon">
 </p>
 
-<h1 align="center">Duo by Examples</h1>
+<h1 align="center">iPhone Duo by Examples</h1>
 
 <p align="center">
   The SwiftUI APIs for the foldable <b>iPhone Duo</b>, one runnable example at a time.
@@ -17,14 +17,12 @@
 </p>
 
 <p align="center">
-  <img src=".github/images/catalog.png" width="560" alt="The catalog of examples on the inner display of an unfolded iPhone Duo">
-  &nbsp;
-  <img src=".github/images/catalog-folded.png" width="270" alt="The catalog of examples on the outer display of a folded iPhone Duo">
+  <img src=".github/images/hero.png" width="600" alt="The catalog of examples on a partially folded iPhone Duo in the simulator">
 </p>
 
 iOS 27.1 adds a set of SwiftUI APIs for the iPhone Duo: reading the hinge, finding the fold and the camera, arranging views side by side, and controlling the new vertical bar. This project demonstrates each of them in a small example that you can run, read, and copy.
 
-- Each example lives in **one file** in [`DuoByExamples/Examples`](DuoByExamples/Examples).
+- Each example lives in **one file** in [`iPhoneDuoByExamples/Examples`](iPhoneDuoByExamples/Examples).
 - Each file begins with a doc comment that explains the API.
 - `// 👇 The API:` comments mark the lines that matter.
 
@@ -35,21 +33,25 @@ iOS 27.1 adds a set of SwiftUI APIs for the iPhone Duo: reading the hinge, findi
 - [API Cheat Sheet](#api-cheat-sheet)
 - [Good to Know](#good-to-know)
 - [Project Structure](#project-structure)
+- [Resources](#resources)
+- [Contributing](#contributing)
+- [Author](#author)
+- [License](#license)
 
 ## Getting Started
 
 **Requirements:** Xcode 27.1 or later, and the iPhone Duo simulator (iOS 27.1) or an iPhone Duo.
 
 ```bash
-git clone https://github.com/artemnovichkov/DuoByExamples.git
-cd DuoByExamples
-open DuoByExamples.xcodeproj
+git clone https://github.com/artemnovichkov/iPhone-Duo-by-Examples.git
+cd iPhone-Duo-by-Examples
+open iPhoneDuoByExamples.xcodeproj
 ```
 
 Select the **iPhone Duo** run destination and press <kbd>⌘</kbd><kbd>R</kbd>. Fold and unfold the device in Simulator to watch the examples react.
 
 > [!TIP]
-> To open an example directly, pass its name as a launch argument. For example, `-example hingeAngle` or `-example avoidDivision`. The names are the cases of the [`Example`](DuoByExamples/Catalog/Example.swift) enum.
+> To open an example directly, pass its name as a launch argument. For example, `-example hingeAngle` or `-example avoidDivision`. The names are the cases of the [`Example`](iPhoneDuoByExamples/Catalog/Example.swift) enum.
 
 ## Examples
 
@@ -57,37 +59,37 @@ Select the **iPhone Duo** run destination and press <kbd>⌘</kbd><kbd>R</kbd>. 
 
 | | Example | What it shows |
 |---|---|---|
-| <img src=".github/images/hingeAngle.png" width="260"> | [**Hinge Angle**](DuoByExamples/Examples/HingeAngleExample.swift) | Reads the live angle with `onHingeChange` and mirrors it in a 3D model of the device, a gauge, and a status strip. |
-| | [**Angle History**](DuoByExamples/Examples/HingeHistoryExample.swift) | Records every hinge update and plots it with Swift Charts. Uses `isEnabled` to pause delivery. |
+| <img src=".github/images/hingeAngle.png" width="260"> | [**Hinge Angle**](iPhoneDuoByExamples/Examples/HingeAngleExample.swift) | Reads the live angle with `onHingeChange` and mirrors it in a 3D model of the device, a gauge, and a status strip. |
+| <img src=".github/images/hingeHistory.png" width="260"> | [**Angle History**](iPhoneDuoByExamples/Examples/HingeHistoryExample.swift) | Records every hinge update and plots it with Swift Charts. Uses `isEnabled` to pause delivery. |
 
 ### Reserved Regions
 
 | | Example | What it shows |
 |---|---|---|
-| <img src=".github/images/reservedRegions.png" width="260"> | [**Reserved Regions**](DuoByExamples/Examples/ReservedRegionsExample.swift) | Queries `.division` and `.occlusion` regions from `GeometryProxy` and draws each region's frame, margins, and active state. The screenshot shows the fold as an active region while the device is partially folded. |
-| <img src=".github/images/avoidDivision.png" width="260"> | [**Avoid the Crease**](DuoByExamples/Examples/AvoidDivisionExample.swift) | A two-page reader that places one page on each side of the division region. When there's no division, it falls back to one page. |
-| <img src=".github/images/tabletop.png" width="260"> | [**Tabletop & Book**](DuoByExamples/Examples/TabletopExample.swift) | Lays out a media player around the *active* division region: artwork above and controls below in tabletop pose, side by side in book pose. Apple recommends reserved regions, not the hinge angle, for layout. |
-| <img src=".github/images/evenColumns.png" width="260"> | [**Even Columns**](DuoByExamples/Examples/EvenColumnsExample.swift) | Uses the *inactive* division region to give a grid an even number of columns, with a gutter right over the fold. |
+| <img src=".github/images/reservedRegions.png" width="260" alt="The fold shown as an active division region while the device is partially folded"> | [**Reserved Regions**](iPhoneDuoByExamples/Examples/ReservedRegionsExample.swift) | Queries `.division` and `.occlusion` regions from `GeometryProxy` and draws each region's frame, margins, and active state. |
+| <img src=".github/images/avoidDivision.png" width="260"> | [**Avoid the Crease**](iPhoneDuoByExamples/Examples/AvoidDivisionExample.swift) | A two-page reader that places one page on each side of the division region. When there's no division, it falls back to one page. |
+| <img src=".github/images/tabletop.png" width="260"> | [**Tabletop & Book**](iPhoneDuoByExamples/Examples/TabletopExample.swift) | Lays out a media player around the *active* division region: artwork above and controls below in tabletop pose, side by side in book pose. Apple recommends reserved regions, not the hinge angle, for layout. |
+| <img src=".github/images/evenColumns.png" width="260"> | [**Even Columns**](iPhoneDuoByExamples/Examples/EvenColumnsExample.swift) | Uses the *inactive* division region to give a grid an even number of columns, with a gutter right over the fold. |
 
 ### Arrangements
 
 | | Example | What it shows |
 |---|---|---|
-| <img src=".github/images/splitArrangement.png" width="260"><br><img src=".github/images/splitArrangement-folded.png" width="130"> | [**Split Arrangement**](DuoByExamples/Examples/SplitArrangementExample.swift) | `ArrangementView` with the `.split` style. Sets the allowed axes and the pane ratio with `splitArrangementLayoutRatio`. When unfolded, the panes sit side by side; when folded, they stack. |
-| <img src=".github/images/overlayArrangement-book.png" width="260"> | [**Overlay Arrangement**](DuoByExamples/Examples/OverlayArrangementExample.swift) | `ArrangementView` with the `.overlay` style: a results panel over a map. The panel collapses while `overlayArrangementZIndex` says it covers the map, and expands when the partially folded device puts the two side by side. `overlayArrangementEdge` sets which side the panel takes. |
+| <img src=".github/images/splitArrangement.png" width="260"><br><img src=".github/images/splitArrangement-folded.png" width="130"> | [**Split Arrangement**](iPhoneDuoByExamples/Examples/SplitArrangementExample.swift) | `ArrangementView` with the `.split` style. Sets the allowed axes and the pane ratio with `splitArrangementLayoutRatio`. When unfolded, the panes sit side by side; when folded, they stack. |
+| <img src=".github/images/overlayArrangement-book.png" width="260"> | [**Overlay Arrangement**](iPhoneDuoByExamples/Examples/OverlayArrangementExample.swift) | `ArrangementView` with the `.overlay` style: a results panel over a map. The panel collapses while `overlayArrangementZIndex` says it covers the map, and expands when the partially folded device puts the two side by side. `overlayArrangementEdge` sets which side the panel takes. |
 
 ### Bars & Margins
 
 | | Example | What it shows |
 |---|---|---|
-| <img src=".github/images/verticalToolbar.png" width="260"> | [**Vertical Toolbar**](DuoByExamples/Examples/VerticalToolbarExample.swift) | A mail-style demo with a tab bar and toolbar items in the vertical bar. Covers `toolbarVerticalBehavior`, `toolbarVerticalCompressionBehavior`, `axisBehavior`, `visibilityPriority`, `.topBarPinnedTrailing`, `ToolbarOverflowMenu`, badges, and `toolbarVerticalEdge`. |
-| | [**Container Margins**](DuoByExamples/Examples/ContainerMarginsExample.swift) | `contentMargins(for: .container)` compared with a hard-coded padding, and the raw values from `GeometryProxy.contentMargins(for:)`. |
+| <img src=".github/images/verticalToolbar.png" width="260"> | [**Vertical Toolbar**](iPhoneDuoByExamples/Examples/VerticalToolbarExample.swift) | A mail-style demo with a tab bar and toolbar items in the vertical bar. Covers `toolbarVerticalBehavior`, `toolbarVerticalCompressionBehavior`, `axisBehavior`, `visibilityPriority`, `.topBarPinnedTrailing`, `ToolbarOverflowMenu`, badges, and `toolbarVerticalEdge`. |
+| <img src=".github/images/containerMargins.png" width="260"> | [**Container Margins**](iPhoneDuoByExamples/Examples/ContainerMarginsExample.swift) | `contentMargins(for: .container)` compared with a hard-coded padding, and the raw values from `GeometryProxy.contentMargins(for:)`. |
 
 ### Adaptivity
 
 | | Example | What it shows |
 |---|---|---|
-| <img src=".github/images/foldedUnfolded.png" width="260"><br><img src=".github/images/foldedUnfolded-folded.png" width="130"> | [**Folded & Unfolded**](DuoByExamples/Examples/FoldedUnfoldedExample.swift) | Adapts a layout to the space the app has, using size classes and `onGeometryChange`, rather than checking which device it runs on. |
+| <img src=".github/images/foldedUnfolded.png" width="260"><br><img src=".github/images/foldedUnfolded-folded.png" width="130"> | [**Folded & Unfolded**](iPhoneDuoByExamples/Examples/FoldedUnfoldedExample.swift) | Adapts a layout to the space the app has, using size classes and `onGeometryChange`, rather than checking which device it runs on. |
 
 ## API Cheat Sheet
 
@@ -209,7 +211,7 @@ These are observations from the iPhone Duo simulator on iOS 27.1. They aren't do
 ## Project Structure
 
 ```
-DuoByExamples
+iPhoneDuoByExamples
 ├── App           # App entry point
 ├── Catalog       # Example list, info sheet, metadata
 ├── Components    # Shared views and DeviceHinge helpers
@@ -217,12 +219,28 @@ DuoByExamples
 └── Resources     # Asset catalog
 ```
 
-The Xcode project uses Xcode's JSON project format ([`project.xcproj`](DuoByExamples.xcodeproj/project.xcproj)). It's readable and easy to edit by hand; each source file is listed there with its target membership.
+The Xcode project uses Xcode's JSON project format ([`project.xcproj`](iPhoneDuoByExamples.xcodeproj/project.xcproj)). It's readable and easy to edit by hand; each source file is listed there with its target membership.
+
+## Resources
+
+- [Get Ready for iPhone Duo](https://developer.apple.com/iphone-duo/)
+- [Preparing your app for iPhone Duo](https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo)
+- [Designing for iPhone Duo](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo) in the Human Interface Guidelines
+- Tech Talks:
+  - [Prepare your app for iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111461/)
+  - [Raise the bar with iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111462/)
+  - [Strike a pose with adaptive layouts on iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111463/)
+  - [Leverage multiple displays and scenes on iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111464/)
+  - [Design for iPhone Duo](https://developer.apple.com/videos/play/tech-talks/111466/)
 
 ## Contributing
 
 Found a new API, or a better way to use one? Issues and pull requests are welcome. Please keep each example in a single file and focused on one idea.
 
+## Author
+
+Artem Novichkov, https://artemnovichkov.com/
+
 ## License
 
-Duo by Examples is available under the MIT license. See the [LICENSE](LICENSE) file for details.
+The project is available under the MIT license. See the [LICENSE](./LICENSE) file for more info.

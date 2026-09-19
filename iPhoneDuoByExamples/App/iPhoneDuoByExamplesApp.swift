@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct DuoByExamplesApp: App {
+struct iPhoneDuoByExamplesApp: App {
     var body: some Scene {
         WindowGroup {
             CatalogView()

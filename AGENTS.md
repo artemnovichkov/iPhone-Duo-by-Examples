@@ -8,18 +8,18 @@ A SwiftUI-only catalog of runnable examples for the iPhone Duo (foldable iPhone)
 
 ## Commands
 
-The Xcode project uses the JSON project format: `DuoByExamples.xcodeproj/project.xcproj` (there is no `project.pbxproj`). Files are listed explicitly under `"files"`, grouped by folder. When you add, remove, or rename a source file, edit its entry by hand, for example:
+The Xcode project uses the JSON project format: `iPhoneDuoByExamples.xcodeproj/project.xcproj` (there is no `project.pbxproj`). Files are listed explicitly under `"files"`, grouped by folder. When you add, remove, or rename a source file, edit its entry by hand, for example:
 
 ```json
-{ "path": "NewExample.swift", "target-membership": [ "DuoByExamples/compile-sources" ] },
+{ "path": "NewExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
 ```
 
-Asset catalogs use `"DuoByExamples/resources"`. Build settings live in `"build-settings"`: project-wide at the root, and target-specific inside `"targets"`. Per-configuration values use the `KEY[config=Debug]` form.
+Asset catalogs use `"iPhoneDuoByExamples/resources"`. Build settings live in `"build-settings"`: project-wide at the root, and target-specific inside `"targets"`. Per-configuration values use the `KEY[config=Debug]` form.
 
 Build for the iPhone Duo simulator (Xcode 27.1, iOS 27.1 SDK):
 
 ```bash
-xcodebuild -project DuoByExamples.xcodeproj -scheme DuoByExamples \
+xcodebuild -project iPhoneDuoByExamples.xcodeproj -scheme iPhoneDuoByExamples \
   -destination 'platform=iOS Simulator,name=iPhone Duo' build
 ```
 
@@ -28,7 +28,7 @@ There are no tests and no linter.
 To run and open one example directly, pass `-example <case>`, where `<case>` is a raw value of the `Example` enum:
 
 ```bash
-xcrun simctl launch booted com.artemnovichkov.DuoByExamples -example hingeAngle
+xcrun simctl launch booted com.artemnovichkov.iPhoneDuoByExamples -example hingeAngle
 ```
 
 The iPhone Duo simulator has two displays. `xcrun simctl io booted screenshot` captures the inner display; add `--display=1` for the outer (cover) display. Only the active display has content; the other is black (folded → outer, open → inner). Fold state can't be changed from the command line or the device-interaction tools. Ask the user to fold, unfold, or half-fold the simulator. Device-interaction sessions bind to the outer display, so taps don't reach the inner display.

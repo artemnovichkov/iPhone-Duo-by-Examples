@@ -26,7 +26,7 @@ struct CatalogView: View {
                     }
                 }
             }
-            .navigationTitle("Duo by Examples")
+            .navigationTitle("iPhone Duo by Examples")
         } detail: {
             if let selection {
                 ExampleScreen(example: selection)

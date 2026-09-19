@@ -129,7 +129,7 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
 
     /// Path of the example's source file, used for the "View Source" link.
     var sourcePath: String {
-        "DuoByExamples/Examples/\(fileName).swift"
+        "iPhoneDuoByExamples/Examples/\(fileName).swift"
     }
 
     private var fileName: String {
