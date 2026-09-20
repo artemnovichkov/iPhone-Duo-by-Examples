@@ -280,11 +280,34 @@ The Xcode project uses Xcode's JSON project format ([`project.xcproj`](iPhoneDuo
 
 ## See Also
 
-- [Accorduon](https://github.com/artemnovichkov/Accorduon): an accordion for iPhone Duo where the hinge is the bellows. Fold and unfold to play. A full app built on `onHingeChange`.
-- [Duogami](https://github.com/artemnovichkov/Duogami): an origami workshop for iPhone Duo. Fold the phone to fold the paper. A full app built on `onHingeChange` and `reservedRegions`.
-- [SandValley](https://github.com/artemnovichkov/SandValley): sand for iPhone Duo. Fold the device and the sand slides into the fold. A full app built on `onHingeChange`, `reservedRegions`, and a Metal shader.
-- [ClawKit](https://github.com/artemnovichkov/ClawKit): a clay claw machine for iPhone Duo. The machine sits above the fold and the controls below it. A full app built on `reservedRegions`, `onHingeChange`, and RealityKit.
-- [DuoBird](https://github.com/artemnovichkov/DuoBird): Flappy Bird for iPhone Duo. Snap the hinge open to flap. A full app built on `onHingeChange` and `Canvas`.
+Apps and games built for iPhone Duo, where folding the device is the whole point.
+
+<table>
+<tr>
+<td width="80"><a href="https://github.com/artemnovichkov/Accorduon"><img width="64" src="https://raw.githubusercontent.com/artemnovichkov/Accorduon/main/.github/images/icon.png"></a></td>
+<td><a href="https://github.com/artemnovichkov/Accorduon"><b>Accorduon</b></a><br>An accordion where the hinge is the bellows. Fold and unfold to play.</td>
+</tr>
+<tr>
+<td width="80"><a href="https://github.com/artemnovichkov/SandValley"><img width="64" src="https://raw.githubusercontent.com/artemnovichkov/SandValley/main/.github/images/icon.png"></a></td>
+<td><a href="https://github.com/artemnovichkov/SandValley"><b>SandValley</b></a><br>Pour sand on the screen and fold the device to make it slide into the valley.</td>
+</tr>
+<tr>
+<td width="80"><a href="https://github.com/artemnovichkov/Duogami"><img width="64" src="https://raw.githubusercontent.com/artemnovichkov/Duogami/main/.github/images/icon.png"></a></td>
+<td><a href="https://github.com/artemnovichkov/Duogami"><b>Duogami</b></a><br>An origami workshop. Fold the phone to fold the paper, one crease at a time.</td>
+</tr>
+<tr>
+<td width="80"><a href="https://github.com/artemnovichkov/ClawKit"><img width="64" src="https://raw.githubusercontent.com/artemnovichkov/ClawKit/main/.github/images/icon.png"></a></td>
+<td><a href="https://github.com/artemnovichkov/ClawKit"><b>ClawKit</b></a><br>A clay claw machine. The cabinet stands above the fold, the controls sit below it.</td>
+</tr>
+<tr>
+<td width="80"><a href="https://github.com/artemnovichkov/DuoBird"><img width="64" src="https://raw.githubusercontent.com/artemnovichkov/DuoBird/main/.github/images/icon.png"></a></td>
+<td><a href="https://github.com/artemnovichkov/DuoBird"><b>DuoBird</b></a><br>Flappy Bird played with the hinge. Snap the device open to flap through the pipes.</td>
+</tr>
+<tr>
+<td width="80"><a href="https://github.com/artemnovichkov/DuoCut"><img width="64" src="https://raw.githubusercontent.com/artemnovichkov/DuoCut/main/.github/images/icon.png"></a></td>
+<td><a href="https://github.com/artemnovichkov/DuoCut"><b>DuoCut</b></a><br>The fold is a blade. Slide shapes under it and cut them in half.</td>
+</tr>
+</table>
 
 ## Resources
 
