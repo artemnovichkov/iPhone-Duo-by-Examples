@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "hinge": {
+      "source": "artemnovichkov/hinge",
+      "sourceType": "github",
+      "skillPath": "skills/hinge/SKILL.md",
+      "computedHash": "c1774a1f08556358ccdeb585068518b0f6a15ad1a34e414479b0455718180bdc"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+# hinge — control the hinge angle of a foldable iPhone Simulator (iPhone Duo).
+set -euo pipefail
+
+VERSION="0.1.0"
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+HELPER_SRC="$SCRIPT_DIR/hinge_helper.c"
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/hinge"
+DEVICE="booted"
+
+usage() {
+  cat <<EOF
+Usage: hinge [-d <device>] <command>
+
+Commands:
+  <degrees>                   Set hinge angle, 0 (closed) to 180 (flat)
+  set <degrees>               Same as above
+  open                        Unfold flat (180°)
+  close                       Fold closed (0°)
+  half                        Half-open (90°)
+  sweep <from> <to> [seconds] Animate between two angles (default 1s)
+  get                         Print current hinge angle
+  help                        Show this help
+
+Options:
+  -d, --device <device>       Simulator UDID, name, or "booted" (default)
+  -v, --version               Print version
+EOF
+}
+
+die() { echo "hinge: $*" >&2; exit 1; }
+
+is_number() { [[ "$1" =~ ^-?[0-9]+([.][0-9]+)?$ ]]; }
+
+# Resolves the device argument to a booted simulator UDID.
+resolve_udid() {
+  local booted
+  booted="$(xcrun simctl list devices booted 2>/dev/null | grep -E '\(Booted\)' || true)"
+  [[ -n "$booted" ]] || die "no booted simulator"
+  if [[ "$DEVICE" =~ ^[0-9A-Fa-f-]{36}$ ]]; then
+    echo "$DEVICE"
+    return
+  fi
+  local line
+  if [[ "$DEVICE" == "booted" ]]; then
+    line="$(echo "$booted" | head -1)"
+  else
+    line="$(echo "$booted" | grep -F "    $DEVICE (" | head -1 || true)"
+    [[ -n "$line" ]] || die "no booted simulator named \"$DEVICE\""
+  fi
+  echo "$line" | sed -E 's/.*\(([0-9A-Fa-f-]{36})\).*/\1/'
+}
+
+# Builds the in-simulator helper once per source and Xcode version.
+helper_path() {
+  local key
+  key="$( (cat "$HELPER_SRC"; xcode-select -p) | shasum | cut -c1-12)"
+  local bin="$CACHE_DIR/hinge_helper-$key"
+  if [[ ! -x "$bin" ]]; then
+    mkdir -p "$CACHE_DIR"
+    xcrun -sdk iphonesimulator clang -arch arm64 -mios-simulator-version-min=17.0 -O2 \
+      -o "$bin.tmp" "$HELPER_SRC" -framework IOKit -framework CoreFoundation \
+      || die "failed to build helper"
+    codesign -f -s - "$bin.tmp" >/dev/null 2>&1 || die "failed to sign helper"
+    mv "$bin.tmp" "$bin"
+  fi
+  echo "$bin"
+}
+
+run_helper() {
+  local udid bin
+  udid="$(resolve_udid)"
+  bin="$(helper_path)"
+  xcrun simctl spawn "$udid" "$bin" "$@"
+}
+
+set_angle() {
+  is_number "$1" || die "angle must be a number: $1"
+  run_helper set "$1"
+}
+
+get_angle() {
+  local udid out pid angle=""
+  udid="$(resolve_udid)"
+  out="$(mktemp)"
+  xcrun devicectl device motion hinge-angle -d "$udid" --session-timeout 5 -t 10 >"$out" 2>&1 &
+  pid=$!
+  for _ in $(seq 1 80); do
+    angle="$(grep -m1 -oE 'Angle: *[0-9]+([.,][0-9]+)?' "$out" | grep -oE '[0-9]+([.,][0-9]+)?' | tr , . || true)"
+    [[ -n "$angle" ]] && break
+    kill -0 "$pid" 2>/dev/null || break
+    sleep 0.1
+  done
+  kill "$pid" 2>/dev/null || true
+  wait "$pid" 2>/dev/null || true
+  if [[ -z "$angle" ]]; then
+    cat "$out" >&2
+    rm -f "$out"
+    die "failed to read hinge angle"
+  fi
+  rm -f "$out"
+  echo "$angle"
+}
+
+main() {
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -d|--device) [[ $# -ge 2 ]] || die "missing value for $1"; DEVICE="$2"; shift 2 ;;
+      -v|--version) echo "$VERSION"; exit 0 ;;
+      -h|--help|help) usage; exit 0 ;;
+      *) break ;;
+    esac
+  done
+
+  [[ $# -gt 0 ]] || { usage; exit 64; }
+  local cmd="$1"; shift
+  case "$cmd" in
+    set) [[ $# -eq 1 ]] || die "usage: hinge set <degrees>"; set_angle "$1" ;;
+    open) set_angle 180 ;;
+    close) set_angle 0 ;;
+    half) set_angle 90 ;;
+    sweep)
+      [[ $# -ge 2 && $# -le 3 ]] || die "usage: hinge sweep <from> <to> [seconds]"
+      local seconds="${3:-1}"
+      for n in "$1" "$2" "$seconds"; do is_number "$n" || die "not a number: $n"; done
+      run_helper sweep "$1" "$2" "$seconds"
+      ;;
+    get) get_angle ;;
+    *)
+      is_number "$cmd" || { usage >&2; exit 64; }
+      set_angle "$cmd"
+      ;;
+  esac
+}
+
+main "$@"
