@@ -7,6 +7,7 @@ enum ExampleSection: String, CaseIterable, Identifiable {
     case arrangements = "Arrangements"
     case barsAndMargins = "Bars & Margins"
     case adaptivity = "Adaptivity"
+    case scenes = "Scenes & Displays"
 
     var id: Self { self }
 
@@ -16,7 +17,7 @@ enum ExampleSection: String, CaseIterable, Identifiable {
 }
 
 /// Every example in the app. Each case knows how to describe itself and which view to show.
-enum Example: String, CaseIterable, Identifiable, Hashable {
+enum Example: String, CaseIterable, Identifiable, Hashable, Codable {
     case hingeAngle
     case hingeHistory
     case reservedRegions
@@ -25,9 +26,15 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
     case evenColumns
     case splitArrangement
     case overlayArrangement
+    case dualPanePatterns
+    case customArrangement
     case verticalToolbar
+    case toolbarPriority
     case containerMargins
     case foldedUnfolded
+    case safeAreas
+    case splitViewSide
+    case coverAccessory
 
     var id: Self { self }
 
@@ -35,9 +42,10 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
         switch self {
         case .hingeAngle, .hingeHistory: .hinge
         case .reservedRegions, .avoidDivision, .tabletop, .evenColumns: .reservedRegions
-        case .splitArrangement, .overlayArrangement: .arrangements
-        case .verticalToolbar, .containerMargins: .barsAndMargins
-        case .foldedUnfolded: .adaptivity
+        case .splitArrangement, .overlayArrangement, .dualPanePatterns, .customArrangement: .arrangements
+        case .verticalToolbar, .toolbarPriority, .containerMargins: .barsAndMargins
+        case .foldedUnfolded, .safeAreas: .adaptivity
+        case .splitViewSide, .coverAccessory: .scenes
         }
     }
 
@@ -51,9 +59,15 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
         case .evenColumns: "Even Columns"
         case .splitArrangement: "Split Arrangement"
         case .overlayArrangement: "Overlay Arrangement"
+        case .dualPanePatterns: "Dual-Pane Patterns"
+        case .customArrangement: "Custom Arrangement Style"
         case .verticalToolbar: "Vertical Toolbar"
+        case .toolbarPriority: "Overflow & Priority"
         case .containerMargins: "Container Margins"
         case .foldedUnfolded: "Folded & Unfolded"
+        case .safeAreas: "Safe Areas"
+        case .splitViewSide: "Split View Side"
+        case .coverAccessory: "Cover Display Accessory"
         }
     }
 
@@ -75,12 +89,24 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
             "Place two views side by side with ArrangementView and tune the ratio between them."
         case .overlayArrangement:
             "Float a panel over full-bleed content and collapse it with overlayArrangementZIndex while it covers the content."
+        case .dualPanePatterns:
+            "List–detail, companion pane, and extended canvas: three common layouts built with ArrangementView and its sizing modifiers."
+        case .customArrangement:
+            "Write your own ArrangementViewStyle that places the primary and secondary views on either side of the fold."
         case .verticalToolbar:
             "Control the vertical bar: opt out, choose compression behavior and item axis behavior."
+        case .toolbarPriority:
+            "Add toolbar items one by one and watch visibilityPriority decide which ones overflow first."
         case .containerMargins:
             "Align content to the container's margins with the new container content margin guide."
         case .foldedUnfolded:
             "React to size changes when the device folds and unfolds using size classes and container size."
+        case .safeAreas:
+            "Draw the safe area insets on each edge and see how the vertical bar makes them asymmetric."
+        case .splitViewSide:
+            "Find out which half of the inner display a Split View window is on, and keep two windows in sync."
+        case .coverAccessory:
+            "Show a second scene on the cover display while the camera runs, with CameraCaptureAccessory."
         }
     }
 
@@ -94,9 +120,15 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
         case .evenColumns: "square.grid.2x2"
         case .splitArrangement: "rectangle.split.2x1"
         case .overlayArrangement: "square.on.square"
+        case .dualPanePatterns: "rectangle.righthalf.inset.filled"
+        case .customArrangement: "paintbrush.pointed"
         case .verticalToolbar: "sidebar.left"
+        case .toolbarPriority: "ellipsis.circle"
         case .containerMargins: "square.dashed.inset.filled"
         case .foldedUnfolded: "arrow.left.and.right.square"
+        case .safeAreas: "inset.filled.rectangle"
+        case .splitViewSide: "rectangle.split.2x1.fill"
+        case .coverAccessory: "camera.on.rectangle"
         }
     }
 
@@ -107,6 +139,7 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
         case .arrangements: .teal
         case .barsAndMargins: .orange
         case .adaptivity: .green
+        case .scenes: .purple
         }
     }
 
@@ -121,9 +154,15 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
         case .evenColumns: ["GeometryProxy.reservedRegions(kind:options:)", "ReservedRegion.QueryOptions.includeInactive"]
         case .splitArrangement: ["ArrangementView", "arrangementViewStyle(.split)", "splitArrangementLayoutRatio(_:)", "splitArrangementAxis"]
         case .overlayArrangement: ["ArrangementView", "arrangementViewStyle(.overlay)", "overlayArrangementEdge(_:)", "overlayArrangementZIndex"]
+        case .dualPanePatterns: ["splitArrangementLayoutRatio(minHorizontal:idealHorizontal:…)", "splitArrangementLayoutSize(minWidth:idealWidth:maxWidth:…)", "splitArrangementFixedLayoutSize(horizontal:vertical:)", "OverlayArrangementViewStyle.axes(_:)"]
+        case .customArrangement: ["ArrangementViewStyle", "ArrangementViewStyleConfiguration", "arrangementViewStyle(_:)", "GeometryProxy.reservedRegions(kind:options:)"]
         case .verticalToolbar: ["toolbarVerticalBehavior(_:)", "toolbarVerticalCompressionBehavior(_:)", "axisBehavior(_:)", "visibilityPriority(_:)", "ToolbarOverflowMenu", "toolbarVerticalEdge"]
+        case .toolbarPriority: ["visibilityPriority(_:)", "ToolbarItemVisibilityPriority(higherThan:)", "ToolbarItemPlacement.topBarPinnedTrailing", "ToolbarOverflowMenu"]
         case .containerMargins: ["contentMargins(for:edges:alignment:)", "ContentMarginGuide.container", "GeometryProxy.contentMargins(for:)"]
         case .foldedUnfolded: ["horizontalSizeClass", "onGeometryChange(for:of:action:)"]
+        case .safeAreas: ["GeometryProxy.safeAreaInsets", "toolbarVerticalEdge"]
+        case .splitViewSide: ["GeometryProxy.reservedRegions(kind:options:layoutDirectionBehavior:)", "toolbarVerticalEdge", "openWindow(value:)"]
+        case .coverAccessory: ["sceneAccessory(content:)", "CameraCaptureAccessory", "onAvailabilityChange(perform:)", "AVCaptureSession"]
         }
     }
 
@@ -147,9 +186,15 @@ enum Example: String, CaseIterable, Identifiable, Hashable {
         case .evenColumns: EvenColumnsExample()
         case .splitArrangement: SplitArrangementExample()
         case .overlayArrangement: OverlayArrangementExample()
+        case .dualPanePatterns: DualPanePatternsExample()
+        case .customArrangement: CustomArrangementExample()
         case .verticalToolbar: VerticalToolbarExample()
+        case .toolbarPriority: ToolbarPriorityExample()
         case .containerMargins: ContainerMarginsExample()
         case .foldedUnfolded: FoldedUnfoldedExample()
+        case .safeAreas: SafeAreasExample()
+        case .splitViewSide: SplitViewSideExample()
+        case .coverAccessory: CoverAccessoryExample()
         }
     }
 }

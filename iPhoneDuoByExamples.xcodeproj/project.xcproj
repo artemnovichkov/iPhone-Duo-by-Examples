@@ -43,14 +43,20 @@
           "children": [
             { "path": "AvoidDivisionExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "ContainerMarginsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "CoverAccessoryExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "CustomArrangementExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "DualPanePatternsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "EvenColumnsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "FoldedUnfoldedExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "HingeAngleExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "HingeHistoryExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "OverlayArrangementExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "ReservedRegionsExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "SafeAreasExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "SplitArrangementExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "SplitViewSideExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "TabletopExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
+            { "path": "ToolbarPriorityExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
             { "path": "VerticalToolbarExample.swift", "target-membership": [ "iPhoneDuoByExamples/compile-sources" ] },
           ],
         }, {
@@ -68,6 +74,7 @@
         { "path": "<PRODUCTS>/iPhoneDuoByExamples.app", "id": "56F8AE6F414878B7278DD2C5", "type": "wrapper.application", "index": false },
       ],
     },
+    { "path": "README.md" },
   ],
   "targets": [
     {
@@ -88,7 +95,9 @@
         "ENABLE_PREVIEWS": "YES",
         "GENERATE_INFOPLIST_FILE": "YES",
         "INFOPLIST_KEY_CFBundleDisplayName": "Duo by Examples",
+        "INFOPLIST_KEY_NSCameraUsageDescription": "The Cover Display Accessory example runs the camera to show a second scene on the cover display.",
         "INFOPLIST_KEY_UIApplicationSceneManifest_Generation": "YES",
+        "INFOPLIST_KEY_UIApplicationSupportsMultipleScenes": "YES",
         "INFOPLIST_KEY_UILaunchScreen_Generation": "YES",
         "INFOPLIST_KEY_UISupportedInterfaceOrientations": "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown",
         "LD_RUNPATH_SEARCH_PATHS": [
